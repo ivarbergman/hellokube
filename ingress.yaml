@@ -4,6 +4,6 @@ metadata:
   name: hellokube-ingress
 spec:
   backend:
-    serviceName: hellokube
+    serviceName: hellokube-np
     servicePort: 3000
 
