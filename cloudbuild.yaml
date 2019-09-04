@@ -3,6 +3,11 @@ steps:
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/hellokube:$SHORT_SHA', '-t', 'gcr.io/$PROJECT_ID/hellokube:latest', './']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/hellokube:latest']
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['set', 'image', 'deployment', 'hellokube', 'hellokube=gcr.io/$PROJECT_ID/hellokube:$SHORT_SHA']
+  env:
+    - 'CLOUDSDK_COMPUTE_ZONE=europe-west6-c'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=cluster'
 images:
 - 'gcr.io/$PROJECT_ID/hellokube:$SHORT_SHA'
 - 'gcr.io/$PROJECT_ID/hellokube:latest'

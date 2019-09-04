@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: hellokube
-        image: gcr.io/hellokube-251919/hellokube:latest
+        image: gcr.io/hellokube-251919/hellokube:7ff5296
         resources:
           limits:
             cpu: 200m
