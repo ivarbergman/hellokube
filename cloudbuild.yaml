@@ -7,7 +7,7 @@ steps:
   args: ['set', 'image', 'deployment', 'hellokube', 'hellokube=gcr.io/$PROJECT_ID/hellokube:$SHORT_SHA']
   env:
     - 'CLOUDSDK_COMPUTE_ZONE=europe-west6-c'
-    - 'CLOUDSDK_CONTAINER_CLUSTER=hellokube-251919'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=cluster'
 images:
 - 'gcr.io/$PROJECT_ID/hellokube:$SHORT_SHA'
 - 'gcr.io/$PROJECT_ID/hellokube:latest'
